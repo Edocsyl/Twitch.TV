@@ -115,11 +115,11 @@ input[type="search"] {
 	margin: 10px 0 0 15px;
 }
 
-.twitch-widget-streamlist {
+.twitch-widget-itemlist {
 	overflow-y: scroll;
 }
 
-.twitch-widget-streamlist>a {
+.twitch-widget-itemlist>a {
 	margin: 10px 0 0 15px;
 }
 
@@ -142,6 +142,10 @@ input[type="search"] {
     border: 2px solid #7550ba;
 }
 
+.game_item_selected {
+    border: 2px solid #7550ba;
+}
+
 
 .game_status {
 	
@@ -149,7 +153,7 @@ input[type="search"] {
 	color: #6B6B6B;
 }
 
-.stream_img {
+.stream_item {
 	max-width: 320px;
 	height: 232px;
 	float: left;
@@ -163,7 +167,7 @@ input[type="search"] {
 	border: 2px solid #FFF;
 }
 
-.stream_img:hover {
+.stream_item:hover {
 	border: 2px solid #7550ba;
 }
 

@@ -11,10 +11,31 @@
 
 
 <script>
-	
+
 	(function() {
 		
+		$(document).keydown(function(e) {
+		    switch(e.which) {
+		        case 37: // left
+		        	$('#twitch-widget-itemlist').find('.game_item:first').css('background-color', 'red').end();
+		        break;
 
+		        case 38: // up
+		        break;
+
+		        case 39: // right
+		        break;
+
+		        case 40: // down
+		        break;
+
+		        default: return; // exit this handler for other keys
+		    }
+		    e.preventDefault(); // prevent the default action (scroll / move caret)
+		});
+		
+		
+		
 		showGames();
 		
 		
@@ -38,9 +59,8 @@
 			})();
 	
 			// CLICK A STREAM :: WHEN CKICK A STREAM IMAGE -> SHOW STREAM
-			$(document).on("click", "#twitch-widget-streamlist a", function(e) {
+			$(document).on("click", "#twitch-widget-itemlist .stream_item", function(e) {
 				e.preventDefault();
-				var id = $(this).attr("id");
 				var name = $(this).attr("name");
 			  
 				window.location = "stream.html#" + name;
@@ -49,18 +69,14 @@
 		 
 			
 		  // CLICK A GAME :: WHEN CKICK A GAME IMAGE -> SHOW LIST OF STREAMERS
-		  $(document).on("click", "#twitch-widget-gamelist div", function(e) {
+		  $(document).on("click", "#twitch-widget-itemlist .game_item", function(e) {
+			  
 			  e.preventDefault();
-			  var id = $(this).attr("id");
+			  
 			  var name = $(this).attr("name");
-			  
-			  $("#game-list-header").text(name);
-			  
-			  name = name.replace(/\s/g,"+");
-			  name = name.replace(/\:/g,"%3A");
-			  
-			  $("#twitch-widget-gamelist").empty();
-			  $("#twitch-widget-streamlist").empty();
+			  defineScreen(name);
+
+			  name = name.replace(/\s/g,"+").replace(/\:/g,"%3A");
 			  
 			  $.ajax({
 		            url: 'https://api.twitch.tv/kraken/streams?game=' + name + '&limit=100',
@@ -70,14 +86,13 @@
 		            success: function(data) {
 		            	
 		            	$.each(data.streams, function(index, value){
-		            			            		
-		            		$("#twitch-widget-streamlist").append("<div class='stream_img'><a href='#' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'></a><br><b>" + value.channel.status + "</b><br/><div class='game_status'>" + value.viewers + " viewers on " + value.channel.display_name + "</div></div>");
+		            		            		
+		            		$("#twitch-widget-itemlist").append("<div class='stream_item' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'><br><b>" + value.channel.status + "</b><br/><div class='game_status'>" + value.viewers + " viewers on " + value.channel.display_name + "</div></div>");
 
 		            	})
 		            }
 				});
 			});
-		  
 		  
 	
 	</script>
@@ -108,9 +123,7 @@
 		<h1 id="game-list-header">All Games</h1>
 		
 		<div class="clear"></div>
-
-		<div class="twitch-widget-gamelist" id="twitch-widget-gamelist"></div>
-		<div class="twitch-widget-streamlist" id="twitch-widget-streamlist"></div>
+		<div class="twitch-widget-itemlist" id="twitch-widget-itemlist"></div>
 
 	</div>
 	<div style="clear: both;"></div>
