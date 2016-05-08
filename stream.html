@@ -9,7 +9,7 @@
 <script src= "http://player.twitch.tv/js/embed/v1.js"></script>
 
 <script>
-	
+
 	$(document).ready(function () {
 		
 		var nameHash = location.hash;
@@ -27,8 +27,8 @@
 	    player.setVolume(1);
 	    player.setQuality("chunked");
 	    
-		var chat = "<iframe frameborder='0' scrolling='no' id='chat_embed' src='http://www.twitch.tv/" + nameHash + "/chat' height='" + $(document).height() + "' width='200'></iframe>"
-		chat.append(".left_panel_chat");
+		//var chat = "<iframe frameborder='0' scrolling='no' id='chat_embed' src='http://www.twitch.tv/" + nameHash + "/chat' height='" + $(document).height() + "' width='200'></iframe>"
+		//chat.append(".left_panel_chat");
 	})();
 
 	</script>
@@ -47,8 +47,7 @@
 	<div id="{PLAYER_DIV_ID}"></div>
 	</div>
 	
-	<div class="left_panel_chat">
-	</div>
+	<!-- <div class="left_panel_chat"></div> -->
 	
 </body>
 </html>
