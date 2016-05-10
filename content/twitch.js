@@ -7,6 +7,24 @@ function defineScreen($title){
 }
 
 
+function selectItem(lI, operation) {
+		
+	switch(operation) {
+		case "next": lI = lI + 1
+			$("#twitch-widget-itemlist .game_item").eq(lI).addClass("game_item_selected");
+			$("#twitch-widget-itemlist .game_item").eq(lI - 1).removeClass("game_item_selected");
+		break;
+		case "back":  lI = lI - 1
+			$("#twitch-widget-itemlist .game_item").eq(lI).addClass("game_item_selected");
+			$("#twitch-widget-itemlist .game_item").eq(lI + 1).removeClass("game_item_selected");
+		break;
+		default: return;
+	}
+
+	return lI;
+	
+}
+
 function searchChannel(search) {
 	
 	defineScreen("Search: " + search)
@@ -23,11 +41,12 @@ function searchChannel(search) {
           		channel_name = value.channel.name
 				channel_id = value.channel._id
 				channel_image = value.preview.medium
-				channgel_display_name = value.channel.display_name
+				channel_display_name = value.channel.display_name
 				channel_status = value.channel.status
+				channel_viewers = value.viewers
 				
-          		$("#twitch-widget-itemlist").append("<div class='stream_item' name='" + channel_name + "' id='" + channel_id + "'><img src='" + channel_image + "'><br><b>" + channgel_display_name + "</b><br/><div id='channel_status'>" + channel_status + "</div></div>");
-          		
+          		$("#twitch-widget-itemlist").append("<div class='stream_item' name='" + channel_name + "' id='" + channel_id + "'><img src='" + channel_image + "'><br><b>" + channel_status + "</b><br/><div class='game_status'>" + channel_viewers + " viewers on " + channel_display_name + "</div></div>");
+
           	})
           }
 		});
@@ -79,7 +98,7 @@ function showChannels(){
 				channel_viewers = value.viewers
 				channel_status = value.channel.status
 				
-				$("#twitch-widget-itemlist").append("<div class='stream_item' name='" + channel_name + "' id='" + channel_id + "'><img src='" + channel_image + "'><br><b>" + channel_display_name + " (" + channel_viewers + " viewers)</b><br/><div id='channel_status'>" + channel_status + "</div></div>");
+				$("#twitch-widget-itemlist").append("<div class='stream_item' name='" + channel_name + "' id='" + channel_id + "'><img src='" + channel_image + "'><br><b>" + channel_status + "</b><br/><div class='game_status'>" + channel_viewers + " viewers on " + channel_display_name + "</div></div>");
 			})
 		}
 	});

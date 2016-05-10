@@ -12,22 +12,29 @@
 
 <script>
 
+	var listIndex = 0;
+
 	(function() {
+
 		
 		$(document).keydown(function(e) {
 		    switch(e.which) {
 		        case 37: // left
-		        	$('#twitch-widget-itemlist').find('.game_item:first').css('background-color', 'red').end();
+		        	listIndex = selectItem(listIndex, "back");
 		        break;
 
 		        case 38: // up
 		        break;
 
 		        case 39: // right
+		        	listIndex = selectItem(listIndex, "next");
 		        break;
 
 		        case 40: // down
 		        break;
+		        
+		        //case 13: // enter
+		        //break;
 
 		        default: return; // exit this handler for other keys
 		    }
@@ -86,8 +93,15 @@
 		            success: function(data) {
 		            	
 		            	$.each(data.streams, function(index, value){
-		            		            		
-		            		$("#twitch-widget-itemlist").append("<div class='stream_item' name='" + value.channel.name + "' id='" + value._id + "'><img src='" + value.preview.medium + "'><br><b>" + value.channel.status + "</b><br/><div class='game_status'>" + value.viewers + " viewers on " + value.channel.display_name + "</div></div>");
+		            		
+		            		channel_name = value.channel.name
+		            		channel_display_name = value.channel.display_name
+		            		channel_id = value._id
+		            		channel_image = value.preview.medium
+		            		channel_status = value.channel.status
+		            		channel_vierers = value.viewers
+
+		            		$("#twitch-widget-itemlist").append("<div class='stream_item' name='" + channel_name + "' id='" + channel_id + "'><img src='" + channel_image + "'><br><b>" + channel_status + "</b><br/><div class='game_status'>" + channel_vierers + " viewers on " + channel_display_name + "</div></div>");
 
 		            	})
 		            }
