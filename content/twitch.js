@@ -7,16 +7,16 @@ function defineScreen($title){
 }
 
 
-function selectItem(lI, operation) {
+function selectItem(lI, operation, selector) {
 		
 	switch(operation) {
 		case "next": lI = lI + 1
-			$("#twitch-widget-itemlist .game_item").eq(lI).addClass("game_item_selected");
-			$("#twitch-widget-itemlist .game_item").eq(lI - 1).removeClass("game_item_selected");
+			$(selector).eq(lI).addClass("item_selected");
+			$(selector).eq(lI - 1).removeClass("item_selected");
 		break;
 		case "back":  lI = lI - 1
-			$("#twitch-widget-itemlist .game_item").eq(lI).addClass("game_item_selected");
-			$("#twitch-widget-itemlist .game_item").eq(lI + 1).removeClass("game_item_selected");
+			$(selector).eq(lI).addClass("item_selected");
+			$(selector).eq(lI + 1).removeClass("item_selected");
 		break;
 		default: return;
 	}

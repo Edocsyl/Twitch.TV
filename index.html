@@ -14,27 +14,26 @@
 
 	var listIndex = 0;
 
-	(function() {
-
-		
-		$(document).keydown(function(e) {
+		$(document).on("keydown", function(e) {
 		    switch(e.which) {
 		        case 37: // left
-		        	listIndex = selectItem(listIndex, "back");
+		        	listIndex = selectItem(listIndex, "back", ".game_item");
 		        break;
 
 		        case 38: // up
 		        break;
 
 		        case 39: // right
-		        	listIndex = selectItem(listIndex, "next");
+		        	listIndex = selectItem(listIndex, "next", ".game_item");
 		        break;
 
 		        case 40: // down
 		        break;
 		        
-		        //case 13: // enter
-		        //break;
+		        case 13: // enter
+		        	selectedItem = $(".game_item", "").eq(listIndex).attr("name");
+					alert(selectedItem);
+		        break;
 
 		        default: return; // exit this handler for other keys
 		    }
@@ -43,7 +42,11 @@
 		
 		
 		
+		
+		
 		showGames();
+		
+		
 		
 		
 			//Click on "Games"
@@ -57,13 +60,12 @@
 			});
 			 
 			  // HIT ENTER IN THE SEARCH BOX
-			$(document).on("keypress", "#search", function(e){
-					if(e.keyCode === 13){
+			$(document).on("keydown", "#search", function(e){
+				if(e.keyCode == 13){
 						searchChannel($("#search").val());    
-					}
-				});
+				}
+			});
 
-			})();
 	
 			// CLICK A STREAM :: WHEN CKICK A STREAM IMAGE -> SHOW STREAM
 			$(document).on("click", "#twitch-widget-itemlist .stream_item", function(e) {
@@ -141,5 +143,18 @@
 
 	</div>
 	<div style="clear: both;"></div>
+	
+	
+	<script>
+	
+	var itemlistWith = $("#twitch-widget-itemlist").width();
+	var howManyInOneList = Math.floor(itemlistWith / 168);
+	var howManyItemsInDiv = $("#twitch-widget-itemlist .game_item").length;
+	
+	
+	console.log(howManyItemsInDiv)
+	
+	
+	</script>
 </body>
 </html>
