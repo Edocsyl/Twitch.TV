@@ -5,9 +5,6 @@ I wanted to watch stream on the TV, i had to connect it to my pc, and see the st
 
 I did that a few times, until it started to piss me off, so i started to look into, how to make my own Twitch.TV app, for the WebOS. It turned out it wasn't that complicated, so i stat down, and started the project.
 
-## Installation instructions
-If you want to try out the app for your self, you can just follow these steps.
-
 ## Installation
 The App is avaiable in the lg store soon.
 
