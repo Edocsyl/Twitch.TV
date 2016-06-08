@@ -1,6 +1,7 @@
 
 function defineScreen($title){
 	
+	
 	$("#game-list-header").text($title);
 	$("#twitch-widget-itemlist").empty();
 	$("#search").val("");
@@ -50,6 +51,7 @@ function searchChannel(search) {
           	})
           }
 		});
+	
 }
 
 function showGames(){
@@ -76,6 +78,7 @@ function showGames(){
 	
 	          }
 	}); 
+	
 }
 
 function showChannels(){

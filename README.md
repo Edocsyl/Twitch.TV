@@ -8,10 +8,8 @@ I did that a few times, until it started to piss me off, so i started to look in
 ## Installation instructions
 If you want to try out the app for your self, you can just follow these steps.
 
-* Download latest zip from [Dropbox](https://www.dropbox.com/s/7np16b29jye3lfk/TwitchTV.zip?dl=0). (V.0.4)
-* Unzip it to the root of your usb flash drive.
-* Attach your flash drive to the tv.
-* Find app in the smart menu.
+## Installation
+The App is avaiable in the lg store soon.
 
 ## Images
 ![TV Menu](http://i.imgur.com/y6IabsX.jpg)
@@ -19,17 +17,13 @@ If you want to try out the app for your self, you can just follow these steps.
 
 
 #### Updates
-###### Update 0.6
+###### Update 1.0
 Added:
-+ Channel Search
-+ UI Improvements
- + Page Scroll
- + Game / Stream selector 
- + Menu redesign
- + bug fixes
 
 Removed:
 
 #### ToDo
-+ Remote control operated
++ Remote control
 + Stream chat
++ UI imporvements
+++ nprogress

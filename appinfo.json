@@ -1,14 +1,14 @@
 {
     "vendor": "PatrickR",
     "iconColor": "#6441a5",
-    "largeIcon": "largeIcon.png",
-    "icon": "icon.png",
+    "largeIcon": "content\\image\\largeIcon.png",
+    "icon": "content/image/icon.png",
     "main": "index.html",
-    "bgImage": "background.png",
+    "bgImage": "content\\image\background.png",
     "id": "com.patrickrorth.twitchtv",
     "title": "Twitch",
     "type": "web",
-    "version": "0.0.7",
-    "splashBackground": "background.png",
+    "version": "1.0.0",
+    "splashBackground": "content\\image\background.png",
     "uiRevision":2
 }
