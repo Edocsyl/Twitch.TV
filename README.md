@@ -9,12 +9,12 @@ I did that a few times, until it started to piss me off, so i started to look in
 The App is avaiable in the lg store soon.
 
 ## Images
-![TV Menu](http://i.imgur.com/y6IabsX.jpg)
-![App menu](http://i.imgur.com/osbAh3E.jpg)
+![All Games](screenshots/1_all_games_1-0-beta.png)
+![Channels](screenshots/2_channels_1-0-beta.png)
 
 
 #### Updates
-###### Update 1.0
+###### Update 1.0 beta
 Added:
 
 Removed:
