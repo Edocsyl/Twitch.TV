@@ -9,8 +9,8 @@ I did that a few times, until it started to piss me off, so i started to look in
 The App is avaiable in the lg store soon.
 
 ## Images
-![All Games](screenshots/1_all_games_1-0-beta.png)
-![Channels](screenshots/2_channels_1-0-beta.png)
+![All Games](app_submission_lg_seller_store/1_all_games_1-0-beta.png)
+![Channels](app_submission_lg_seller_store/2_channels_1-0-beta.png)
 
 
 #### Updates
