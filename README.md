@@ -20,7 +20,7 @@ Added:
 Removed:
 
 #### ToDo
-+ Remote control
++ general remote
 + Stream chat
 + UI imporvements
 ++ nprogress
