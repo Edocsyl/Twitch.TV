@@ -24,24 +24,19 @@
 	$(document).ready(function () {		
 		var nameHash = location.hash;		
 		nameHash = nameHash.replace(/\#/g,"");
-		document.getElementById('content').src = "http://player.twitch.tv/?channel={0}&html5&quality=chuncked".format(nameHash);
+		document.getElementById('videoFrame').src = "http://player.twitch.tv/?channel={0}&html5".format(nameHash);
 	})();
 	</script>	
 </head>
 <body>
-	<div class="left_panel_stream">
-	
-		<div class="back">
-			<a href="#" onClick="history.back();">
-				<img src="content/image/back.png"/>
-			</a>
-		</div>
-	    <iframe frameborder="0" id="content" src="http://player.twitch.tv" width="100%" height="100%"></iframe> 
-	</div>
-	
-
-	<!-- <div class="left_panel_chat"></div> -->
-
-	
+	<div class="left_panel_stream">			
+	    <iframe 
+		frameborder="0" 
+		id="videoFrame" 
+		src="http://player.twitch.tv?html5" 
+		width="100%" 
+		height="100%">
+		</iframe> 
+	</div>	
 </body>
 </html>
